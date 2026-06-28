@@ -1,0 +1,60 @@
+---
+import CTABox from "@components/CTABox.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import FAQ from "@components/FAQ.astro";
+import Hero from "@components/Hero.astro";
+import ProductBox from "@components/ProductBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Finanzielle Freiheit: Bedeutung, Schritte und Grenzen"
+  description="Was finanzielle Freiheit wirklich bedeuten kann: mehr Spielraum, klare Finanzen, realistische Ziele und keine Garantie auf Reichtum."
+  canonical="/finanzielle-freiheit"
+>
+  <Hero
+    eyebrow="Finanzielle Freiheit"
+    title="Finanzielle Freiheit bedeutet zuerst mehr Handlungsspielraum"
+    description="Für viele Menschen beginnt finanzielle Freiheit nicht mit Reichtum, sondern mit weniger Druck, besseren Entscheidungen und einem Plan für die eigenen Finanzen."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/ratgeber/was-bedeutet-finanzielle-freiheit-wirklich"
+    secondaryLabel="Definition lesen"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <article class="content-prose">
+      <h2>Eine realistische Definition</h2>
+      <p>
+        Finanzielle Freiheit wird oft sehr groß dargestellt: nie wieder arbeiten, passives Einkommen, vollständige Unabhängigkeit. Für die meisten Menschen ist eine
+        bodenständigere Definition hilfreicher: genügend Überblick, Rücklagen und Entscheidungsspielraum, um nicht dauerhaft von kurzfristigem Geldstress bestimmt zu werden.
+      </p>
+      <p>
+        Das kann bedeuten, Rechnungen pünktlich zahlen zu können, Rücklagen für Notfälle zu haben, Schulden planvoll abzubauen oder langfristig Vermögen aufzubauen.
+        Diese Schritte sind unspektakulär, aber oft wirksamer als schnelle Versprechen.
+      </p>
+
+      <h2>Was du beeinflussen kannst</h2>
+      <ul>
+        <li>deinen Überblick über Einnahmen, Ausgaben und Verpflichtungen</li>
+        <li>deine Sparquote und deine Konsumgewohnheiten</li>
+        <li>dein Wissen über Risiken, Kosten und langfristige Planung</li>
+        <li>deine Bereitschaft, regelmäßig kleine Entscheidungen zu treffen</li>
+      </ul>
+      <p>
+        Nicht alles ist kontrollierbar. Einkommen, Gesundheit, Familie, Konjunktur und Märkte können Pläne verändern. Gerade deshalb ist ein realistischer Ansatz wichtig.
+      </p>
+    </article>
+    <ProductBox text="Das Buch kann helfen, finanzielle Freiheit als Richtung zu verstehen und erste Routinen aufzubauen." />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <FAQ />
+    <Disclaimer />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <CTABox title="Finanzielle Freiheit als Lernprozess starten" text="Wenn du einen verständlichen Einstieg suchst, kannst du das Buch ansehen und danach in Ruhe entscheiden." />
+  </section>
+</BaseLayout>

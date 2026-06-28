@@ -1,0 +1,85 @@
+---
+import ArticleCard from "@components/ArticleCard.astro";
+import CTABox from "@components/CTABox.astro";
+import ComparisonTable from "@components/ComparisonTable.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import FAQ from "@components/FAQ.astro";
+import Hero from "@components/Hero.astro";
+import ProContraBox from "@components/ProContraBox.astro";
+import ProductBox from "@components/ProductBox.astro";
+import RatingBox from "@components/RatingBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { articleTeasers, PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Der Weg zur finanziellen Freiheit von Bodo Schäfer"
+  description="Seriöse Informationen zum Finanzbuch Der Weg zur finanziellen Freiheit von Bodo Schäfer. Für Einsteiger, Familien und Selbstständige, die ihre Finanzen ordnen möchten."
+  canonical="/"
+>
+  <Hero
+    eyebrow="Finanzbuch Empfehlung"
+    title="Finanzen ordnen, Geld bewusster nutzen und Vermögen langfristig denken"
+    description="Eine ruhige Einordnung zum Buch Der Weg zur finanziellen Freiheit von Bodo Schäfer. Ohne Reichtumsversprechen, ohne Druck und mit klarem Hinweis auf eigene Verantwortung."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/ratgeber"
+    secondaryLabel="Ratgeber lesen"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <div class="content-prose">
+      <h2>Worum es auf dieser Website geht</h2>
+      <p>
+        Viele Menschen möchten ihre Finanzen endlich ordnen, wissen aber nicht, wo sie anfangen sollen. Genau hier kann ein verständliches Finanzbuch helfen:
+        Es sortiert Grundbegriffe, macht typische Denkfehler sichtbar und erinnert daran, dass Vermögensaufbau meist mit klaren Routinen beginnt.
+      </p>
+      <p>
+        Diese Website stellt das Buch <strong>Der Weg zur finanziellen Freiheit</strong> von Bodo Schäfer vor und ergänzt es um sachliche Ratgebertexte zu
+        Geld sparen, Haushaltsbuch, Schuldenabbau, Geld-Mindset und Vermögensaufbau. Die Inhalte sind bewusst allgemein gehalten und ersetzen keine persönliche Beratung.
+      </p>
+      <h2>Für wen das Buch interessant sein kann</h2>
+      <p>
+        Besonders passend ist das Thema für Einsteiger, Familien, Selbstständige und alle, die ihre Geldentscheidungen weniger zufällig treffen möchten.
+        Wer bereits komplexe Anlagefragen, Steuerfragen oder hohe Schulden hat, sollte zusätzlich professionelle Unterstützung prüfen.
+      </p>
+    </div>
+    <ProductBox />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <ProContraBox />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <RatingBox />
+    <Disclaimer />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <ComparisonTable />
+  </section>
+
+  <section class="bg-slate-50 py-14">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-sm font-extrabold uppercase text-gold-600">Einstieg</p>
+        <h2 class="mt-2 text-3xl font-black text-navy-900">Zentrale Themen für den Start</h2>
+        <p class="mt-4 leading-7 text-slate-600">
+          Finanzielle Ordnung beginnt nicht mit dem perfekten Produkt, sondern mit Überblick, einfachen Regeln und realistischen Erwartungen.
+        </p>
+      </div>
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {articleTeasers.map((item) => <ArticleCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <FAQ />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <CTABox />
+  </section>
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import CTABox from "@components/CTABox.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import FAQ from "@components/FAQ.astro";
+import Hero from "@components/Hero.astro";
+import ProductBox from "@components/ProductBox.astro";
+import RatingBox from "@components/RatingBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Bodo Schäfer Erfahrungen: seriöse Buch-Einordnung"
+  description="Bodo Schäfer Erfahrungen ohne künstliche Versprechen: Was Leser erwarten können, wo Grenzen liegen und für wen das Finanzbuch geeignet ist."
+  canonical="/bodo-schaefer-erfahrungen"
+>
+  <Hero
+    eyebrow="Erfahrungen und Einordnung"
+    title="Was du von Bodo Schäfers Finanzbuch realistisch erwarten kannst"
+    description="Keine erfundenen Erfahrungsberichte, sondern eine klare redaktionelle Einschätzung zu Nutzen, Zielgruppe und Grenzen des Buches."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/ratgeber"
+    secondaryLabel="Weitere Ratgeber"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <article class="content-prose">
+      <h2>Warum diese Seite keine falschen Erfahrungsberichte nutzt</h2>
+      <p>
+        Im Finanzbereich ist Vertrauen wichtiger als laute Werbung. Deshalb findest du hier keine erfundenen Kundenstimmen, keine garantierten Ergebnisse und keine
+        angeblichen Vorher-nachher-Geschichten. Eine seriöse Einordnung sollte klar sagen, was ein Buch leisten kann und was nicht.
+      </p>
+      <p>
+        Viele Leser suchen nach „Bodo Schäfer Erfahrungen“, weil sie vor dem Kauf wissen möchten, ob sich das Buch für sie lohnt. Die bessere Frage lautet:
+        Passt die Art des Buches zu deiner aktuellen Situation? Wenn du Orientierung, Motivation und Grundprinzipien suchst, kann es hilfreich sein.
+        Wenn du eine individuelle Strategie brauchst, reicht ein Buch allein nicht aus.
+      </p>
+
+      <h2>Positive Punkte aus redaktioneller Sicht</h2>
+      <p>
+        Das Buch spricht Menschen an, die ihre Finanzen nicht länger aufschieben möchten. Es setzt stark bei Denkweise, Zielklarheit und einfachen finanziellen Routinen an.
+        Gerade für Anfänger kann das den Einstieg erleichtern, weil Geldthemen weniger abstrakt wirken.
+      </p>
+
+      <h2>Grenzen, die du ernst nehmen solltest</h2>
+      <p>
+        Persönliche Finanzen sind individuell. Eine Familie mit schwankendem Einkommen, ein Selbstständiger mit Steuerrücklagen oder jemand mit Konsumschulden braucht
+        andere Schritte als eine Person mit sicherem Einkommen und bereits vorhandenen Rücklagen. Genau deshalb ist der Disclaimer wichtig:
+        Diese Website und das Buch ersetzen keine persönliche Finanz-, Steuer- oder Anlageberatung.
+      </p>
+    </article>
+    <ProductBox text="Wenn du das Buch selbst prüfen möchtest, führt der Button zum hinterlegten Digistore24-Promolink. Der Link ist aktuell noch als Platzhalter eingerichtet." />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <RatingBox title="Redaktionelle Buch-Einordnung" />
+    <Disclaimer />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <FAQ
+      items={[
+        {
+          question: "Sind die Erfahrungen auf dieser Seite echte Kundenbewertungen?",
+          answer: "Nein. Diese Seite nutzt bewusst keine behaupteten Kundenbewertungen. Die Einschätzung ist redaktionell und allgemein gehalten."
+        },
+        {
+          question: "Ist Bodo Schäfers Buch für jeden geeignet?",
+          answer: "Nicht automatisch. Es kann für Einsteiger und Menschen mit Wunsch nach Struktur hilfreich sein. Bei komplexen Finanzfragen solltest du zusätzliche Beratung prüfen."
+        },
+        {
+          question: "Warum gibt es keine Erfolgsgarantie?",
+          answer: "Weil finanzielle Ergebnisse von vielen Faktoren abhängen, unter anderem Einkommen, Ausgaben, Schulden, Rücklagen, Zeit, Verhalten und Marktrisiken."
+        }
+      ]}
+    />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <CTABox title="Buch in Ruhe ansehen" text="Prüfe das Angebot über Digistore24 und entscheide erst nach Sichtung aller Konditionen." />
+  </section>
+</BaseLayout>

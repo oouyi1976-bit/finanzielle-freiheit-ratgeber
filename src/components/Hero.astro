@@ -1,0 +1,68 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  image?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+  image = "/images/finance-desk-hero.jpg"
+} = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden border-b border-slate-200 bg-slate-50">
+  <img
+    src={image}
+    alt=""
+    class="absolute inset-0 -z-20 h-full w-full object-cover"
+    width="1796"
+    height="876"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-white via-white/90 to-white/25"></div>
+  <div class="mx-auto flex min-h-[620px] max-w-6xl items-center px-4 py-20 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      {eyebrow && <p class="mb-4 text-sm font-extrabold uppercase text-gold-600">{eyebrow}</p>}
+      <h1 class="text-4xl font-black leading-tight text-navy-900 sm:text-5xl lg:text-6xl">{title}</h1>
+      <p class="mt-6 max-w-xl text-lg leading-8 text-slate-700">{description}</p>
+      {(primaryHref || secondaryHref) && (
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          {
+            primaryHref && primaryLabel && (
+              <a
+                href={primaryHref}
+                class="inline-flex items-center justify-center rounded-md bg-navy-900 px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:bg-navy-800"
+              >
+                {primaryLabel}
+              </a>
+            )
+          }
+          {
+            secondaryHref && secondaryLabel && (
+              <a
+                href={secondaryHref}
+                class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-extrabold text-navy-900 transition hover:border-gold-500 hover:bg-gold-100"
+              >
+                {secondaryLabel}
+              </a>
+            )
+          }
+        </div>
+      )}
+    </div>
+  </div>
+</section>

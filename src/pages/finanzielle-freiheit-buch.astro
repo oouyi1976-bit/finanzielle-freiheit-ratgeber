@@ -1,0 +1,68 @@
+---
+import CTABox from "@components/CTABox.astro";
+import ComparisonTable from "@components/ComparisonTable.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import FAQ from "@components/FAQ.astro";
+import Hero from "@components/Hero.astro";
+import ProContraBox from "@components/ProContraBox.astro";
+import ProductBox from "@components/ProductBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Finanzielle Freiheit Buch: Der Weg zur finanziellen Freiheit"
+  description="Das Finanzielle Freiheit Buch von Bodo Schäfer seriös vorgestellt: Inhalte, Zielgruppe, Grenzen und Bestellhinweis über Digistore24."
+  canonical="/finanzielle-freiheit-buch"
+>
+  <Hero
+    eyebrow="Finanzielle Freiheit Buch"
+    title="Ein Finanzbuch für mehr Klarheit im Umgang mit Geld"
+    description="Der Weg zur finanziellen Freiheit richtet sich an Menschen, die Geldthemen verständlich sortieren und eine langfristige Perspektive entwickeln möchten."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/bodo-schaefer-erfahrungen"
+    secondaryLabel="Einordnung lesen"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <article class="content-prose">
+      <h2>Was ein gutes Finanzbuch leisten sollte</h2>
+      <p>
+        Ein gutes Finanzbuch muss nicht kompliziert sein. Gerade für Anfänger ist wichtig, dass es Grundprinzipien verständlich erklärt:
+        Warum ein Überblick über Ausgaben zählt, weshalb Rücklagen wichtig sind, wie Schulden die Handlungsfreiheit einschränken und warum Vermögensaufbau Zeit braucht.
+      </p>
+      <p>
+        <strong>Der Weg zur finanziellen Freiheit</strong> ist vor allem als Einstieg und Motivationsbuch interessant. Es kann helfen, Geld nicht nur als Alltagsthema zu sehen,
+        sondern als Bereich, der aktiv gestaltet werden kann. Gleichzeitig sollte niemand erwarten, dass ein Buch persönliche Rahmenbedingungen automatisch löst.
+      </p>
+
+      <h2>Typische Fragen vor dem Kauf</h2>
+      <p>
+        Vor der Bestellung lohnt ein nüchterner Blick: Suchst du Grundlagen, Motivation und Struktur? Dann kann das Buch passen. Suchst du eine konkrete Anlageempfehlung,
+        eine Steuerstrategie oder eine vollständige Ruhestandsplanung, brauchst du mehr als ein einzelnes Buch.
+      </p>
+      <p>
+        Der Promolink führt später zu Digistore24. Dort solltest du alle Konditionen prüfen, insbesondere Preis, Versand, Zahlungsdaten, Widerruf und mögliche Zusatzangebote.
+      </p>
+    </article>
+    <ProductBox />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <ProContraBox />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <ComparisonTable />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
+    <FAQ />
+    <Disclaimer />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <CTABox />
+  </section>
+</BaseLayout>

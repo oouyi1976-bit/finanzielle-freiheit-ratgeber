@@ -1,0 +1,16 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<aside class:list={[
+  "rounded-lg border border-amber-200 bg-amber-50 text-amber-950",
+  compact ? "p-4 text-sm leading-6" : "p-6 leading-7"
+]}>
+  <strong>Wichtiger Hinweis:</strong> Diese Website bietet allgemeine Informationen und redaktionelle Einschätzungen.
+  Sie ist keine Finanzberatung, Steuerberatung oder Anlageberatung. Es gibt keine Garantie auf finanzielle Freiheit,
+  Rendite, Vermögensaufbau oder andere Ergebnisse.
+</aside>

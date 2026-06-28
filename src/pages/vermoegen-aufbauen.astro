@@ -1,0 +1,55 @@
+---
+import CTABox from "@components/CTABox.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import Hero from "@components/Hero.astro";
+import ProductBox from "@components/ProductBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Vermögen aufbauen: Grundlagen für Anfänger"
+  description="Vermögen aufbauen mit kleinen Beträgen: Grundlagen, Sparquote, Rücklagen, Zeit und realistische Erwartungen ohne Anlageberatung."
+  canonical="/vermoegen-aufbauen"
+>
+  <Hero
+    eyebrow="Vermögen aufbauen"
+    title="Vermögensaufbau ist ein Prozess, kein schneller Trick"
+    description="Langfristiger Vermögensaufbau beginnt mit Ordnung, Rücklagen, einer tragfähigen Sparquote und einem Verständnis für Risiko."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/ratgeber/vermoegen-aufbauen-mit-kleinen-betraegen"
+    secondaryLabel="Mehr dazu"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <article class="content-prose">
+      <h2>Die Reihenfolge ist wichtiger als die perfekte Idee</h2>
+      <p>
+        Wer Vermögen aufbauen möchte, sucht schnell nach dem besten Investment. Für Anfänger ist die Reihenfolge oft wichtiger:
+        Erst Überblick schaffen, dann Schulden und Risiken prüfen, danach Rücklagen bilden und erst anschließend langfristige Anlageentscheidungen vorbereiten.
+      </p>
+      <p>
+        Kleine Beträge können sinnvoll sein, wenn sie regelmäßig und langfristig eingesetzt werden. Trotzdem gibt es Risiken. Märkte schwanken, persönliche Situationen ändern sich
+        und vergangene Entwicklungen sagen nichts Sicheres über die Zukunft.
+      </p>
+
+      <h2>Grundlagen für eine stabile Basis</h2>
+      <ul>
+        <li>eine klare monatliche Sparrate, die realistisch durchhaltbar ist</li>
+        <li>ein Notgroschen für Reparaturen, Krankheit, Steuernachzahlungen oder Einkommenspausen</li>
+        <li>Verständnis für Kosten, Risiken, Zeithorizont und Liquidität</li>
+        <li>regelmäßige Überprüfung statt hektischer Entscheidungen</li>
+      </ul>
+      <p>
+        Das Buch kann motivieren, diese Grundlagen ernst zu nehmen. Es ersetzt aber keine individuelle Anlageberatung und keine Prüfung deiner persönlichen Risikofähigkeit.
+      </p>
+    </article>
+    <ProductBox text="Der Weg zur finanziellen Freiheit kann als Einstieg dienen, wenn du Vermögensaufbau zuerst grundsätzlich verstehen möchtest." />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <CTABox title="Grundlagen zum Vermögensaufbau lesen" text="Nutze das Buch als Impulsgeber und prüfe konkrete finanzielle Entscheidungen immer eigenständig." />
+    <Disclaimer />
+  </section>
+</BaseLayout>

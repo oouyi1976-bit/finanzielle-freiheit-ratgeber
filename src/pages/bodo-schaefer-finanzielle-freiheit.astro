@@ -1,0 +1,71 @@
+---
+import CTABox from "@components/CTABox.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import FAQ from "@components/FAQ.astro";
+import Hero from "@components/Hero.astro";
+import ProductBox from "@components/ProductBox.astro";
+import RatingBox from "@components/RatingBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Bodo Schäfer finanzielle Freiheit: Buch seriös eingeordnet"
+  description="Informationen zu Bodo Schäfer, finanzieller Freiheit und dem Buch Der Weg zur finanziellen Freiheit. Sachlich, ruhig und ohne unrealistische Versprechen."
+  canonical="/bodo-schaefer-finanzielle-freiheit"
+>
+  <Hero
+    eyebrow="Bodo Schäfer finanzielle Freiheit"
+    title="Bodo Schäfer und das Thema finanzielle Freiheit"
+    description="Eine sachliche Einordnung für Leser, die verstehen möchten, welche Rolle Geldbewusstsein, Sparquote, Ziele und Umsetzung beim Weg zu mehr finanzieller Stabilität spielen."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/finanzielle-freiheit"
+    secondaryLabel="Grundlagen lesen"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <article class="content-prose">
+      <h2>Warum der Name Bodo Schäfer oft mit finanzieller Freiheit verbunden wird</h2>
+      <p>
+        Bodo Schäfer ist im deutschsprachigen Raum vor allem durch Bücher, Vorträge und Bildungsangebote rund um Geld, Vermögensaufbau und persönliche Ziele bekannt.
+        Das Thema finanzielle Freiheit wird dabei häufig als langfristige Richtung verstanden: mehr Kontrolle über Einnahmen und Ausgaben, weniger Abhängigkeit von kurzfristigem Konsum
+        und ein klarerer Umgang mit finanziellen Entscheidungen.
+      </p>
+      <p>
+        Wichtig ist: Finanzielle Freiheit ist kein Zustand, der allein durch ein Buch entsteht. Ein Buch kann Impulse geben, Denkfehler sichtbar machen und eine Struktur vermitteln.
+        Die persönliche Umsetzung hängt aber von Einkommen, Verpflichtungen, Rücklagen, Risikobereitschaft, Familie, Selbstständigkeit und vielen weiteren Faktoren ab.
+      </p>
+
+      <h2>Was Leser aus dem Buch mitnehmen können</h2>
+      <p>
+        Das Buch kann besonders dann hilfreich sein, wenn du bisher ohne festen Plan sparst, keinen klaren Überblick über deine Ausgaben hast oder Geldthemen eher vermeidest.
+        Der Nutzen liegt weniger in einer einzelnen Methode, sondern in der Kombination aus Haltung, Planung und regelmäßiger Umsetzung.
+      </p>
+      <ul>
+        <li>einen bewussteren Blick auf Einnahmen, Ausgaben und finanzielle Ziele</li>
+        <li>mehr Motivation, Geld nicht nur auszugeben, sondern auch zu steuern</li>
+        <li>Denkanstöße zu Rücklagen, Schulden, Sparraten und langfristigem Vermögensaufbau</li>
+      </ul>
+      <p>
+        Wer konkrete Anlageentscheidungen treffen möchte, sollte die Inhalte mit weiteren Quellen und bei Bedarf mit qualifizierter Beratung kombinieren.
+      </p>
+    </article>
+    <ProductBox text="Wenn dich Bodo Schäfers Ansatz zur finanziellen Freiheit interessiert, kannst du das Buch über den Digistore24-Promolink prüfen und bestellen." />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <RatingBox
+      text="Besonders stark ist das Buch als motivierender Einstieg. Für konkrete Finanzprodukte, Steuern oder Versicherungen brauchst du zusätzliche Quellen und individuelle Prüfung."
+    />
+    <Disclaimer />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <FAQ />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <CTABox title="Bodo Schäfers Finanzbuch ansehen" text="Prüfe in Ruhe, ob das Buch zu deiner aktuellen Situation passt. Der Bestellprozess zeigt dir die jeweils gültigen Konditionen." />
+  </section>
+</BaseLayout>

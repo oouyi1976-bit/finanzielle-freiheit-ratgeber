@@ -1,0 +1,54 @@
+---
+import CTABox from "@components/CTABox.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import Hero from "@components/Hero.astro";
+import ProductBox from "@components/ProductBox.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PROMO_LINK } from "@lib/site";
+---
+
+<BaseLayout
+  title="Geld sparen: einfache Schritte für mehr Überblick"
+  description="Geld sparen lernen ohne Verzichtsmythen: Ausgaben erkennen, Prioritäten setzen, Rücklagen bilden und Finanzen ruhig ordnen."
+  canonical="/geld-sparen"
+>
+  <Hero
+    eyebrow="Geld sparen"
+    title="Geld sparen beginnt mit Überblick, nicht mit Druck"
+    description="Wer seine Ausgaben versteht, kann Entscheidungen bewusster treffen. Diese Seite zeigt einfache Grundlagen für Anfänger, Familien und Selbstständige."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/ratgeber/haushaltsbuch-fuehren-fuer-anfaenger"
+    secondaryLabel="Haushaltsbuch starten"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+    <article class="content-prose">
+      <h2>Warum Sparen ohne Überblick selten funktioniert</h2>
+      <p>
+        Viele Menschen versuchen zu sparen, indem sie sich pauschal weniger erlauben. Das hält oft nur kurz. Nachhaltiger ist ein ruhiger Blick auf die tatsächlichen Ausgaben:
+        Miete, Lebensmittel, Versicherungen, Mobilität, Abos, Freizeit, Rücklagen und unregelmäßige Kosten.
+      </p>
+      <p>
+        Ein Haushaltsbuch muss nicht perfekt sein. Wichtig ist, dass du Muster erkennst. Welche Ausgaben kommen jeden Monat wieder? Welche Kosten sind selten, aber hoch?
+        Wo gibst du Geld aus, ohne dass es dir langfristig wichtig ist?
+      </p>
+
+      <h2>Drei einfache Sparroutinen</h2>
+      <ul>
+        <li><strong>Fixkosten prüfen:</strong> Verträge, Abos und Versicherungen einmal pro Quartal ansehen.</li>
+        <li><strong>Rücklagen automatisieren:</strong> Einen festen Betrag direkt nach Geldeingang beiseitelegen.</li>
+        <li><strong>Wunschliste nutzen:</strong> Größere Käufe mindestens 48 Stunden warten lassen.</li>
+      </ul>
+      <p>
+        Sparen ist kein Selbstzweck. Es schafft Spielraum, senkt Stress und kann der erste Schritt zum Vermögensaufbau sein. Für Anlageentscheidungen solltest du dich gesondert informieren.
+      </p>
+    </article>
+    <ProductBox text="Das Buch kann dir helfen, Sparen nicht nur als Verzicht, sondern als bewusste finanzielle Steuerung zu verstehen." />
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <Disclaimer />
+    <CTABox title="Sparen mit mehr Struktur angehen" text="Wenn du einen motivierenden Einstieg suchst, kannst du das Buch über den Promolink ansehen und die Konditionen prüfen." />
+  </section>
+</BaseLayout>

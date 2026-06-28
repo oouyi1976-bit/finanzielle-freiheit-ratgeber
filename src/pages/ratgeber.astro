@@ -1,0 +1,47 @@
+---
+import ArticleCard from "@components/ArticleCard.astro";
+import CTABox from "@components/CTABox.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { PROMO_LINK } from "@lib/site";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Ratgeber: Geld sparen, Finanzen ordnen, Vermögen aufbauen"
+  description="Zehn ruhige Ratgeberartikel zu finanzieller Freiheit, Geld sparen, Haushaltsbuch, Schuldenabbau, Vermögensaufbau und Finanzbüchern für Anfänger."
+  canonical="/ratgeber"
+>
+  <Hero
+    eyebrow="Ratgeber"
+    title="Finanzwissen für den geordneten Start"
+    description="Praktische, seriöse Artikel für Menschen, die ihre Finanzen besser verstehen und Schritt für Schritt mehr Struktur schaffen möchten."
+    primaryHref={PROMO_LINK}
+    primaryLabel="Zum kostenlosen Buch"
+    secondaryHref="/finanzielle-freiheit-buch"
+    secondaryLabel="Buch ansehen"
+  />
+
+  <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map((post) => (
+          <ArticleCard
+            title={post.data.title}
+            description={post.data.description}
+            href={`/ratgeber/${post.id.replace(/\.md$/, "")}`}
+            meta={`${post.data.category} · ${post.data.readingTime}`}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <CTABox title="Mehr Struktur beim Lesen" text="Das Buch kann die Ratgebertexte ergänzen, wenn du ein zusammenhängendes Einstiegsbuch suchst." />
+    <Disclaimer />
+  </section>
+</BaseLayout>
