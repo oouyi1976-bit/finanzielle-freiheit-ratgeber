@@ -41,7 +41,7 @@ Die Amazon-Tracking-ID ist zentral hinterlegt:
 epic05e-21
 ```
 
-Die Amazon-Empfehlungen liegen in:
+Die 30 Amazon-Empfehlungen liegen in:
 
 ```txt
 src/lib/amazon.ts
