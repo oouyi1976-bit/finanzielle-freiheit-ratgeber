@@ -1,5 +1,6 @@
 ---
 import ArticleCard from "@components/ArticleCard.astro";
+import AmazonRecommendations from "@components/AmazonRecommendations.astro";
 import CTABox from "@components/CTABox.astro";
 import ComparisonTable from "@components/ComparisonTable.astro";
 import Disclaimer from "@components/Disclaimer.astro";
@@ -59,6 +60,8 @@ import { articleTeasers, PROMO_LINK } from "@lib/site";
   <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
     <ComparisonTable />
   </section>
+
+  <AmazonRecommendations variant="band" limit={4} />
 
   <section class="bg-slate-50 py-14">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

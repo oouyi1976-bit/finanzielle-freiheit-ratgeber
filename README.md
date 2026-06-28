@@ -33,6 +33,22 @@ Ersetze ihn in:
 src/lib/site.ts
 ```
 
+## Amazon PartnerNet
+
+Die Amazon-Tracking-ID ist zentral hinterlegt:
+
+```txt
+epic05e-21
+```
+
+Die Amazon-Empfehlungen liegen in:
+
+```txt
+src/lib/amazon.ts
+```
+
+Alle Amazon-Links werden dort mit `tag=epic05e-21` erzeugt. Die sichtbaren Empfehlungsboxen werden über die Komponente `src/components/AmazonRecommendations.astro` ausgegeben.
+
 ## Lokal starten
 
 ```bash
@@ -107,6 +123,7 @@ dist
 ## Wichtige Anpassungen vor Veröffentlichung
 
 - Promolink in `src/lib/site.ts` ersetzen.
+- Amazon-Empfehlungen in `src/lib/amazon.ts` vor Veröffentlichung noch einmal auf Verfügbarkeit prüfen.
 - Domain in `astro.config.mjs`, `public/robots.txt` und ggf. SEO-Daten von `https://deine-domain.de` auf deine echte Domain ändern.
 - Impressum in `src/pages/impressum.astro` rechtlich korrekt ausfüllen.
 - Datenschutzerklärung in `src/pages/datenschutz.astro` an deine echte Datenverarbeitung anpassen.

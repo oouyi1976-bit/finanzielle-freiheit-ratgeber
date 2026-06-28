@@ -1,0 +1,46 @@
+---
+import AmazonRecommendations from "@components/AmazonRecommendations.astro";
+import Disclaimer from "@components/Disclaimer.astro";
+import Hero from "@components/Hero.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Amazon Empfehlungen: Finanzbücher und Budget-Tools"
+  description="Ausgewählte Amazon-Empfehlungen zu Bodo Schäfer, Finanzbüchern für Anfänger, Geld sparen, Haushaltsbuch und Vermögensaufbau."
+  canonical="/amazon-empfehlungen"
+>
+  <Hero
+    eyebrow="Amazon PartnerNet"
+    title="Passende Finanzbücher und Budget-Hilfen bei Amazon"
+    description="Eine kuratierte Auswahl an Büchern und einfachen Tools, die zu den Themen Finanzen ordnen, Geld sparen und Vermögen aufbauen passen."
+    secondaryHref="/affiliate-hinweis"
+    secondaryLabel="Affiliate-Hinweis"
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="content-prose">
+      <h2>Warum diese Empfehlungen passen</h2>
+      <p>
+        Die Amazon-Empfehlungen ergänzen das Hauptthema dieser Website: finanzielle Bildung für Einsteiger. Der Fokus liegt auf Büchern und Hilfsmitteln,
+        die Überblick, Sparroutinen, Geld-Mindset und langfristiges Denken unterstützen können.
+      </p>
+      <p>
+        Es werden bewusst keine Preise genannt, weil Preise und Verfügbarkeit bei Amazon schwanken können. Prüfe vor einer Bestellung immer die aktuelle Produktseite,
+        Lieferbedingungen, Bewertungen und Inhaltsangaben.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <AmazonRecommendations
+      limit={12}
+      title="Alle Amazon-Empfehlungen"
+      text="Die Links führen zu Amazon.de und enthalten die Tracking-ID epic05e-21."
+    />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <Disclaimer />
+  </section>
+</BaseLayout>

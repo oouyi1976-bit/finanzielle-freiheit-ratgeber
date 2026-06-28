@@ -14,6 +14,7 @@ export const navLinks = [
   { href: "/finanzielle-freiheit-buch", label: "Buch" },
   { href: "/geld-sparen", label: "Geld sparen" },
   { href: "/vermoegen-aufbauen", label: "Vermoegen" },
+  { href: "/amazon-empfehlungen", label: "Empfehlungen" },
   { href: "/ratgeber", label: "Ratgeber" }
 ];
 

@@ -1,5 +1,6 @@
 ---
 import ArticleCard from "@components/ArticleCard.astro";
+import AmazonRecommendations from "@components/AmazonRecommendations.astro";
 import CTABox from "@components/CTABox.astro";
 import Disclaimer from "@components/Disclaimer.astro";
 import Hero from "@components/Hero.astro";
@@ -39,6 +40,14 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf()
       }
     </div>
   </section>
+
+  <AmazonRecommendations
+    variant="band"
+    group="starter"
+    limit={4}
+    title="Empfohlene Finanzbücher für Anfänger"
+    text="Eine ruhige Auswahl an Büchern, die gut zu den Ratgeberthemen Finanzen ordnen, Geld-Mindset, Sparen und Vermögensaufbau passen."
+  />
 
   <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-16 sm:px-6 lg:grid-cols-2 lg:px-8">
     <CTABox title="Mehr Struktur beim Lesen" text="Das Buch kann die Ratgebertexte ergänzen, wenn du ein zusammenhängendes Einstiegsbuch suchst." />

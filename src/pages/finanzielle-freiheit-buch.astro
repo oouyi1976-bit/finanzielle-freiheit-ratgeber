@@ -1,4 +1,5 @@
 ---
+import AmazonRecommendations from "@components/AmazonRecommendations.astro";
 import CTABox from "@components/CTABox.astro";
 import ComparisonTable from "@components/ComparisonTable.astro";
 import Disclaimer from "@components/Disclaimer.astro";
@@ -55,6 +56,15 @@ import { PROMO_LINK } from "@lib/site";
 
   <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
     <ComparisonTable />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <AmazonRecommendations
+      group="bodo"
+      limit={4}
+      title="Weitere passende Bodo-Schäfer-Bücher bei Amazon"
+      text="Diese Titel passen als ergänzende Empfehlungen, wenn Leser nach mehr Grundlagen, Mindset und Finanzbildung von Bodo Schäfer suchen."
+    />
   </section>
 
   <section class="mx-auto grid max-w-6xl gap-6 px-4 pb-14 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
