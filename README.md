@@ -106,13 +106,14 @@ git push -u origin main
 4. **Pages** auswählen.
 5. GitHub verbinden und dieses Repository auswählen.
 6. Framework preset: **Astro**.
-7. Build Command:
+7. Node-Version: Das Projekt legt automatisch Node `22.12.0` über `.node-version` und `.nvmrc` fest. Falls Cloudflare zusätzlich eine Variable verlangt, setze `NODE_VERSION=22.12.0`.
+8. Build Command:
 
 ```bash
 npm run build
 ```
 
-8. Output Directory:
+9. Output Directory:
 
 ```txt
 dist
