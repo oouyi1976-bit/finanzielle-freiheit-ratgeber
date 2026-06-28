@@ -1,40 +1,71 @@
 ---
+interface ComparisonRow {
+  option: string;
+  strength: string;
+  limit: string;
+  bestFor: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  rows?: ComparisonRow[];
+}
+
+const defaultRows: ComparisonRow[] = [
+  {
+    option: "Der Weg zur finanziellen Freiheit",
+    strength: "Motivation, Grundprinzipien und Geld-Mindset",
+    limit: "Keine individuelle Strategie",
+    bestFor: "Einsteiger, Familien, Selbstständige"
+  },
+  {
+    option: "Haushaltsbuch und Budgetplan",
+    strength: "Schneller Überblick über Einnahmen und Ausgaben",
+    limit: "Löst keine strukturellen Einkommens- oder Schuldenprobleme allein",
+    bestFor: "Alle, die Ordnung schaffen wollen"
+  },
+  {
+    option: "Professionelle Beratung",
+    strength: "Individuelle Betrachtung der persönlichen Situation",
+    limit: "Kann Kosten verursachen und muss sorgfältig ausgewählt werden",
+    bestFor: "Komplexe Fragen, Schulden, Steuern, Vorsorge"
+  }
+];
+
+const {
+  eyebrow = "Vergleich",
+  title = "Welche Art von Finanzhilfe passt?",
+  rows = defaultRows
+} = Astro.props;
 ---
 
 <section class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-soft">
   <div class="border-b border-slate-200 p-6">
-    <p class="text-sm font-extrabold uppercase text-gold-600">Vergleich</p>
-    <h2 class="mt-2 text-2xl font-black text-navy-900">Welche Art von Finanzhilfe passt?</h2>
+    <p class="text-sm font-extrabold uppercase text-gold-600">{eyebrow}</p>
+    <h2 class="mt-2 text-2xl font-black text-navy-900">{title}</h2>
   </div>
   <div class="overflow-x-auto">
     <table class="w-full min-w-[720px] border-collapse text-left text-sm">
       <thead class="bg-slate-50 text-navy-900">
         <tr>
           <th class="border-b border-slate-200 px-6 py-4 font-black">Option</th>
-          <th class="border-b border-slate-200 px-6 py-4 font-black">Staerke</th>
+          <th class="border-b border-slate-200 px-6 py-4 font-black">Stärke</th>
           <th class="border-b border-slate-200 px-6 py-4 font-black">Grenze</th>
-          <th class="border-b border-slate-200 px-6 py-4 font-black">Geeignet fuer</th>
+          <th class="border-b border-slate-200 px-6 py-4 font-black">Geeignet für</th>
         </tr>
       </thead>
       <tbody class="text-slate-700">
-        <tr>
-          <td class="border-b border-slate-100 px-6 py-4 font-extrabold text-navy-900">Der Weg zur finanziellen Freiheit</td>
-          <td class="border-b border-slate-100 px-6 py-4">Motivation, Grundprinzipien und Geld-Mindset</td>
-          <td class="border-b border-slate-100 px-6 py-4">Keine individuelle Strategie</td>
-          <td class="border-b border-slate-100 px-6 py-4">Einsteiger, Familien, Selbststaendige</td>
-        </tr>
-        <tr>
-          <td class="border-b border-slate-100 px-6 py-4 font-extrabold text-navy-900">Haushaltsbuch und Budgetplan</td>
-          <td class="border-b border-slate-100 px-6 py-4">Schneller Ueberblick ueber Einnahmen und Ausgaben</td>
-          <td class="border-b border-slate-100 px-6 py-4">Loest keine strukturellen Einkommens- oder Schuldenprobleme allein</td>
-          <td class="border-b border-slate-100 px-6 py-4">Alle, die Ordnung schaffen wollen</td>
-        </tr>
-        <tr>
-          <td class="px-6 py-4 font-extrabold text-navy-900">Professionelle Beratung</td>
-          <td class="px-6 py-4">Individuelle Betrachtung der persoenlichen Situation</td>
-          <td class="px-6 py-4">Kann Kosten verursachen und muss sorgfaeltig ausgewaehlt werden</td>
-          <td class="px-6 py-4">Komplexe Fragen, Schulden, Steuern, Vorsorge</td>
-        </tr>
+        {
+          rows.map((row, index) => (
+            <tr>
+              <td class:list={["px-6 py-4 font-extrabold text-navy-900", index < rows.length - 1 && "border-b border-slate-100"]}>{row.option}</td>
+              <td class:list={["px-6 py-4", index < rows.length - 1 && "border-b border-slate-100"]}>{row.strength}</td>
+              <td class:list={["px-6 py-4", index < rows.length - 1 && "border-b border-slate-100"]}>{row.limit}</td>
+              <td class:list={["px-6 py-4", index < rows.length - 1 && "border-b border-slate-100"]}>{row.bestFor}</td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   </div>

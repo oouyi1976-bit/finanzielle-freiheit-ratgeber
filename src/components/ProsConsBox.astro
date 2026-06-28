@@ -1,0 +1,27 @@
+---
+interface Props {
+  title?: string;
+  pros: string[];
+  cons: string[];
+}
+
+const { title = "Kurz eingeordnet", pros, cons } = Astro.props;
+---
+
+<section class="rounded-lg border border-slate-200 bg-white p-6 shadow-soft">
+  <h2 class="text-2xl font-black text-navy-900">{title}</h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-2">
+    <div class="rounded-lg border border-emerald-200 bg-emerald-50 p-5">
+      <h3 class="text-lg font-black text-emerald-950">Sinnvoll</h3>
+      <ul class="mt-4 grid gap-3 text-sm leading-6 text-emerald-950">
+        {pros.map((item) => <li class="flex gap-3"><span aria-hidden="true">+</span><span>{item}</span></li>)}
+      </ul>
+    </div>
+    <div class="rounded-lg border border-slate-200 bg-slate-50 p-5">
+      <h3 class="text-lg font-black text-navy-900">Darauf achten</h3>
+      <ul class="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
+        {cons.map((item) => <li class="flex gap-3"><span aria-hidden="true">-</span><span>{item}</span></li>)}
+      </ul>
+    </div>
+  </div>
+</section>

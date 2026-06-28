@@ -1,0 +1,111 @@
+---
+import CTABox from "@components/CTABox.astro";
+import ComparisonTable from "@components/ComparisonTable.astro";
+import DigistoreProductBox from "@components/DigistoreProductBox.astro";
+import DisclaimerBox from "@components/DisclaimerBox.astro";
+import FAQ from "@components/FAQ.astro";
+import Hero from "@components/Hero.astro";
+import ProductGrid from "@components/ProductGrid.astro";
+import ProsConsBox from "@components/ProsConsBox.astro";
+import RelatedArticles from "@components/RelatedArticles.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { digistoreDogRecommendations } from "../data/dogAffiliateLinks";
+import { dogProducts, getDogProductsByCategories } from "../data/dogProducts";
+import { dogPages } from "../data/dogPages";
+
+export function getStaticPaths() {
+  return dogPages.map((page) => ({
+    params: { dogPage: page.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+const products = page.productCategories.length > 0 ? getDogProductsByCategories(page.productCategories) : dogProducts;
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: page.title,
+  description: page.description,
+  inLanguage: "de-DE",
+  about: ["Hund", "Hundetraining", "Hundezubehör", "Welpen"]
+};
+---
+
+<BaseLayout title={page.title} description={page.description} canonical={`/${page.slug}`}>
+  <Hero
+    eyebrow={page.eyebrow}
+    title={page.h1}
+    description={page.intro}
+    image="/images/dog-hero.png"
+    primaryHref="/beste-hundeprodukte"
+    primaryLabel="Produkte ansehen"
+    secondaryHref="/hunde-ratgeber"
+    secondaryLabel="Ratgeber lesen"
+  />
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_340px] lg:px-8">
+    <div class="content-prose">
+      {page.sections.map((section) => (
+        <>
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </>
+      ))}
+    </div>
+    <div class="grid content-start gap-4">
+      <DisclaimerBox variant={page.disclaimerVariant ?? "general"} />
+      <DisclaimerBox variant="affiliate" />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <ProsConsBox pros={page.pros} cons={page.cons} />
+  </section>
+
+  {page.comparisonRows && (
+    <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+      <ComparisonTable eyebrow="Entscheidungshilfe" title="Welche Option passt zu deinem Hund?" rows={page.comparisonRows} />
+    </section>
+  )}
+
+  {page.showDigistore && (
+    <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+      <DigistoreProductBox items={digistoreDogRecommendations} />
+    </section>
+  )}
+
+  <section class="bg-slate-50 py-14">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <ProductGrid
+        products={products}
+        limit={page.productLimit}
+        title={page.slug === "beste-hundeprodukte" ? "Alle 50 Hundeprodukt-Plätze" : "Passende Produktplätze"}
+        text="Die Karten sind neutrale Amazon-Affiliate-Plätze mit Platzhalterlinks. Bitte ersetze sie später durch geprüfte Amazon.de-Links mit deiner Tracking-ID."
+      />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <RelatedArticles
+      items={page.related}
+      title={page.slug === "hunde-ratgeber" ? "Alle Hunde-Ratgeberartikel" : "Passende Ratgeber und Themen"}
+      text="Interne Links helfen Besuchern, von der Orientierung zur passenden Detailseite zu gelangen."
+    />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8">
+    <FAQ items={page.faq} title="Häufige Fragen" />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <CTABox
+      title="Weiter im Hundebereich"
+      text="Wenn du konkrete Produktideen suchst, findest du in der Übersicht 50 vorbereitete Hundeprodukt-Plätze mit klaren Kaufkriterien und Affiliate-Hinweis."
+      label="Beste Hundeprodukte ansehen"
+      href="/beste-hundeprodukte"
+    />
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(pageJsonLd)} />
+</BaseLayout>
