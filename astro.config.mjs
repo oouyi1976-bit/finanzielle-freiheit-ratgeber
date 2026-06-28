@@ -2,7 +2,7 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://deine-domain.de",
+  site: "https://finanzielle-freiheit-ratgeber.pages.dev",
   output: "static",
   integrations: [sitemap()],
   build: {

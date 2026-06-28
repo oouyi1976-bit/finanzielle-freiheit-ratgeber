@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deine-domain.de/sitemap-index.xml
+Sitemap: https://finanzielle-freiheit-ratgeber.pages.dev/sitemap.xml

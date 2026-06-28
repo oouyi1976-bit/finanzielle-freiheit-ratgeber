@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Finanzielle Freiheit Klar",
-  url: "https://deine-domain.de",
+  url: "https://finanzielle-freiheit-ratgeber.pages.dev",
   description:
     "Serioese Orientierung rund um das Finanzbuch Der Weg zur finanziellen Freiheit von Bodo Schaefer.",
   author: "Website-Betreiber"
