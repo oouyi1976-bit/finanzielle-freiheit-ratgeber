@@ -1,184 +1,135 @@
-# HundeKompass Klar
+# Finanzielle Freiheit Klar
 
-Deutsche Affiliate-Ratgeberseite für Hundebesitzer. Die Website ist mit Astro, TypeScript und Tailwind CSS gebaut, statisch auslieferbar und für Cloudflare Pages geeignet.
+Moderne deutsche Affiliate-Website für das Digistore24-Produkt **„Der Weg zur finanziellen Freiheit“ von Bodo Schäfer**.
 
-## Neue Hunde-Bereiche
+Die Website ist mit Astro, TypeScript und Tailwind CSS gebaut, statisch auslieferbar und für Cloudflare Pages vorbereitet.
 
-- `/hunde`
-- `/hundetraining`
-- `/welpen`
-- `/hundezubehoer`
-- `/hundegesundheit`
-- `/hundefutter`
-- `/hund-reisen`
-- `/hunde-ratgeber`
-- `/beste-hundeprodukte`
+## Inhalt
+
+- Startseite
+- `/bodo-schaefer-finanzielle-freiheit`
+- `/finanzielle-freiheit-buch`
+- `/bodo-schaefer-erfahrungen`
+- `/geld-sparen`
+- `/vermoegen-aufbauen`
+- `/finanzielle-freiheit`
+- `/ratgeber`
+- `/impressum`
+- `/datenschutz`
 - `/affiliate-hinweis`
+- 10 Ratgeberartikel unter `/ratgeber/...`
 
-Die Sitemap wird über `@astrojs/sitemap` automatisch beim Build erzeugt. Der `postbuild`-Schritt kopiert den Sitemap-Index nach `dist/sitemap.xml`.
+## Promolink ersetzen
 
-## Amazon-Affiliate-Links ersetzen
-
-Die 50 Hundeprodukt-Plätze liegen in:
-
-```txt
-src/data/dogProducts.ts
-```
-
-Aktuell nutzt jedes Produkt den Platzhalter:
-
-```txt
-AMAZON_AFFILIATE_LINK_HIER_EINFUEGEN
-```
-
-Ersetze je Produkt nur das Feld `affiliateUrl`, zum Beispiel:
+Der Digistore24-Promolink ist aktuell als Platzhalter hinterlegt:
 
 ```ts
-affiliateUrl: "https://www.amazon.de/dp/ASIN?tag=epic05e-21"
+DIGISTORE24_PROMOLINK_HIER_EINFUEGEN
 ```
 
-Vor Veröffentlichung prüfen:
-
-- Link führt zu Amazon.de.
-- Tracking-ID ist enthalten.
-- Produkt passt wirklich zur Kategorie.
-- Keine Amazon-Preise, Sternebewertungen, Rezensionen oder Produktbilder kopieren.
-- Produktangaben auf Amazon aktuell prüfen.
-
-## Digistore24-Links
-
-Die Digistore24-Links liegen zentral in:
+Ersetze ihn in:
 
 ```txt
-src/data/dogAffiliateLinks.ts
+src/lib/site.ts
 ```
 
-Vier Links wurden als hundebezogen eingeordnet und werden im Hundebereich verwendet:
+## Amazon PartnerNet
 
-- `566575` - Hundegruppen im Gleichgewicht
-- `564188` - Mehrere Hunde / EinTeam
-- `252196` - WELPENZEIT / HS-Welpen-Training
-- `259648` - Wecke den Optimisten in deinem Hund
-
-Der Link `https://chi-statt-botox.com/online-kurs/#aff=Benman8810` ist nicht hundebezogen und steht nur getrennt unter „Weitere Empfehlungen“ im Affiliate-Hinweis.
-
-## Neue Hundeprodukte hinzufügen
-
-Neue Produkte werden im Array `dogProducts` ergänzt:
-
-```ts
-{
-  id: "eindeutige-produkt-id",
-  name: "Produktname",
-  category: "Hundeleinen",
-  shortDescription: "Kurze, neutrale Beschreibung.",
-  benefits: ["Vorteil 1", "Vorteil 2"],
-  bestFor: "Für wen das Produkt sinnvoll ist.",
-  priceRange: "niedrig bis mittel",
-  affiliateUrl: "AMAZON_AFFILIATE_LINK_HIER_EINFUEGEN",
-  imageAlt: "Beschreibender Alternativtext",
-  ratingText: "Neutraler Hinweis ohne erfundene Sterne."
-}
-```
-
-Nutze nur Kategorien aus `dogCategories`, damit Filter und Themenseiten sauber funktionieren.
-
-## Neue Hundeartikel hinzufügen
-
-Markdown-Artikel liegen in:
+Die Amazon-Tracking-ID ist zentral hinterlegt:
 
 ```txt
-src/content/blog/
+epic05e-21
 ```
 
-Ein neuer Hundeartikel sollte dieses Frontmatter nutzen:
-
-```md
----
-title: "Artikel-Titel"
-description: "SEO-Meta-Beschreibung"
-date: 2026-06-28
-category: "Hunde - Training"
-readingTime: "6 Min."
----
-```
-
-Die URL entsteht aus dem Dateinamen, zum Beispiel:
+Die 30 Amazon-Empfehlungen liegen in:
 
 ```txt
-/ratgeber/mein-artikel-slug
+src/lib/amazon.ts
 ```
+
+Alle Amazon-Links werden dort mit `tag=epic05e-21` erzeugt. Die sichtbaren Empfehlungsboxen werden über die Komponente `src/components/AmazonRecommendations.astro` ausgegeben.
 
 ## Lokal starten
 
-Abhängigkeiten nur installieren, wenn `node_modules` fehlt oder sich `package-lock.json` geändert hat:
-
 ```bash
 npm install
-```
-
-Entwicklungsserver:
-
-```bash
 npm run dev
 ```
 
-Build prüfen:
+Die lokale Entwicklungsseite läuft danach normalerweise unter:
+
+```txt
+http://localhost:4321
+```
+
+## Build prüfen
 
 ```bash
 npm run build
 ```
 
-## Auf GitHub pushen
+Der statische Output wird in `dist/` erzeugt.
 
-Aktuellen Status prüfen:
+Optional kannst du den Build lokal ansehen:
 
 ```bash
-git status
-git remote -v
+npm run preview
 ```
 
-Änderungen committen:
+## GitHub Repository erstellen
+
+1. Auf GitHub ein neues Repository erstellen.
+2. Kein README auf GitHub hinzufügen, weil dieses Projekt bereits eines enthält.
+3. Danach lokal im Projektordner ausführen:
 
 ```bash
+git init
 git add .
-git commit -m "Add dog affiliate section with Amazon and Digistore24 products"
-```
-
-Push:
-
-```bash
-git push
-```
-
-Falls noch kein Upstream gesetzt ist:
-
-```bash
+git commit -m "Initial affiliate website for Bodo Schaefer financial freedom book"
+git branch -M main
+git remote add origin https://github.com/DEIN-BENUTZERNAME/DEIN-REPOSITORY.git
 git push -u origin main
 ```
 
-## Cloudflare Pages deployen
+Falls das Repository bereits lokal initialisiert und committed ist, reichen nach dem Erstellen des GitHub-Repositories:
 
-1. Repository zu GitHub pushen.
-2. In Cloudflare `Workers & Pages` öffnen.
-3. `Create application` und dann `Pages` wählen.
-4. GitHub-Repository verbinden.
-5. Framework preset: `Astro`.
-6. Build command:
+```bash
+git remote add origin https://github.com/DEIN-BENUTZERNAME/DEIN-REPOSITORY.git
+git push -u origin main
+```
+
+## Cloudflare Pages verbinden
+
+1. In Cloudflare einloggen.
+2. **Workers & Pages** öffnen.
+3. **Create application** wählen.
+4. **Pages** auswählen.
+5. GitHub verbinden und dieses Repository auswählen.
+6. Framework preset: **Astro**.
+7. Node-Version: Das Projekt legt automatisch Node `22.12.0` über `.node-version` und `.nvmrc` fest. Falls Cloudflare zusätzlich eine Variable verlangt, setze `NODE_VERSION=22.12.0`.
+8. Build Command:
 
 ```bash
 npm run build
 ```
 
-7. Output directory:
+9. Output Directory:
 
 ```txt
 dist
 ```
 
-8. Falls Cloudflare eine Node-Version verlangt, `NODE_VERSION=22.12.0` setzen.
 9. Deployment starten.
 
-## Rechtliche Hinweise
+## Wichtige Anpassungen vor Veröffentlichung
 
-Die Inhalte sind allgemeine Ratgeberinformationen und ersetzen keine Tierarztberatung, Hundeschule oder individuelle Trainingsanalyse. Bei gesundheitlichen Problemen sollte eine Tierarztpraxis kontaktiert werden. Es gibt keine Erfolgsgarantien für Training, Verhalten, Gesundheit oder Produktergebnisse.
+- Promolink in `src/lib/site.ts` ersetzen.
+- Amazon-Empfehlungen in `src/lib/amazon.ts` vor Veröffentlichung noch einmal auf Verfügbarkeit prüfen.
+- Domain in `astro.config.mjs`, `public/robots.txt` und ggf. SEO-Daten von `https://deine-domain.de` auf deine echte Domain ändern.
+- Impressum in `src/pages/impressum.astro` rechtlich korrekt ausfüllen.
+- Datenschutzerklärung in `src/pages/datenschutz.astro` an deine echte Datenverarbeitung anpassen.
+- Prüfen, ob zusätzliche Cookie- oder Tracking-Hinweise nötig sind, falls du später Analytics, Pixel oder externe Skripte einbindest.
+
+## Rechtlicher Hinweis
+
+Die Inhalte sind allgemein und redaktionell. Sie sind keine Finanzberatung, Anlageberatung oder Steuerberatung. Es gibt keine Erfolgsgarantie und keine Garantie auf Vermögen, Rendite oder finanzielle Freiheit.

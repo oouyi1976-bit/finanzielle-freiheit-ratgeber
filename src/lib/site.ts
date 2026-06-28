@@ -1,8 +1,8 @@
 export const SITE = {
-  name: "HundeKompass Klar",
-  url: "https://hundekompass-klar.pages.dev",
+  name: "Finanzielle Freiheit Klar",
+  url: "https://finanzielle-freiheit-ratgeber.pages.dev",
   description:
-    "Serioese Ratgeber, Produktempfehlungen und Affiliate-Hinweise fuer Hundebesitzer.",
+    "Serioese Orientierung rund um das Finanzbuch Der Weg zur finanziellen Freiheit von Bodo Schaefer.",
   author: "Website-Betreiber"
 };
 
@@ -10,13 +10,12 @@ export const PROMO_LINK = "DIGISTORE24_PROMOLINK_HIER_EINFUEGEN";
 
 export const navLinks = [
   { href: "/", label: "Start" },
-  { href: "/hunde", label: "Hunde" },
-  { href: "/hundetraining", label: "Training" },
-  { href: "/welpen", label: "Welpen" },
-  { href: "/hundezubehoer", label: "Zubehoer" },
-  { href: "/hundegesundheit", label: "Gesundheit" },
-  { href: "/beste-hundeprodukte", label: "Produkte" },
-  { href: "/hunde-ratgeber", label: "Ratgeber" }
+  { href: "/bodo-schaefer-finanzielle-freiheit", label: "Bodo Schaefer" },
+  { href: "/finanzielle-freiheit-buch", label: "Buch" },
+  { href: "/geld-sparen", label: "Geld sparen" },
+  { href: "/vermoegen-aufbauen", label: "Vermoegen" },
+  { href: "/amazon-empfehlungen", label: "Empfehlungen" },
+  { href: "/ratgeber", label: "Ratgeber" }
 ];
 
 export const footerLinks = [

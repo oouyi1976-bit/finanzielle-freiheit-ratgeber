@@ -4,19 +4,13 @@ import AmazonRecommendations from "@components/AmazonRecommendations.astro";
 import CTABox from "@components/CTABox.astro";
 import ComparisonTable from "@components/ComparisonTable.astro";
 import Disclaimer from "@components/Disclaimer.astro";
-import DisclaimerBox from "@components/DisclaimerBox.astro";
 import FAQ from "@components/FAQ.astro";
 import Hero from "@components/Hero.astro";
 import ProContraBox from "@components/ProContraBox.astro";
-import ProductGrid from "@components/ProductGrid.astro";
 import ProductBox from "@components/ProductBox.astro";
 import RatingBox from "@components/RatingBox.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { dogPageLinks } from "../data/dogContent";
-import { featuredDogProductIds, getDogProductsByIds } from "../data/dogProducts";
 import { articleTeasers, PROMO_LINK } from "@lib/site";
-
-const homeDogProducts = getDogProductsByIds(featuredDogProductIds);
 ---
 
 <BaseLayout
@@ -33,36 +27,6 @@ const homeDogProducts = getDogProductsByIds(featuredDogProductIds);
     secondaryHref="/ratgeber"
     secondaryLabel="Ratgeber lesen"
   />
-
-  <section class="bg-white py-14">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
-        <div>
-          <p class="text-sm font-extrabold uppercase text-gold-600">Hunde-Ratgeber & Produktempfehlungen</p>
-          <h2 class="mt-2 text-3xl font-black text-navy-900">Neuer Bereich für Hundebesitzer</h2>
-          <p class="mt-4 max-w-3xl leading-7 text-slate-600">
-            Freundliche, seriöse Orientierung zu Hundetraining, Welpen, Hundezubehör, Reisen mit Hund und neutralen Produktplätzen.
-            Die Inhalte sind SEO- und Pinterest-tauglich aufgebaut und enthalten klare Affiliate-Hinweise.
-          </p>
-        </div>
-        <DisclaimerBox variant="affiliate" />
-      </div>
-
-      <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-        {dogPageLinks.map((item) => <ArticleCard title={item.title} description={item.description} href={item.href} meta={item.meta} />)}
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-slate-50 py-14">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <ProductGrid
-        products={homeDogProducts}
-        title="Ausgewählte Hundeprodukt-Plätze"
-        text="Diese Karten zeigen vorbereitete Amazon-Produktplätze für Hunde. Die echten Affiliate-Links werden später in der Daten-Datei ersetzt."
-      />
-    </div>
-  </section>
 
   <section class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
     <div class="content-prose">

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hundekompass-klar.pages.dev/sitemap.xml
+Sitemap: https://finanzielle-freiheit-ratgeber.pages.dev/sitemap.xml

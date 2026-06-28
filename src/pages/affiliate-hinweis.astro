@@ -1,7 +1,5 @@
 ---
-import DigistoreProductBox from "@components/DigistoreProductBox.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { digistoreDogRecommendations, otherDigistoreRecommendations } from "../data/dogAffiliateLinks";
 ---
 
 <BaseLayout
@@ -17,8 +15,8 @@ import { digistoreDogRecommendations, otherDigistoreRecommendations } from "../d
         Für dich entstehen dadurch nach aktuellem Stand keine zusätzlichen Kosten.
       </p>
       <p>
-        Im Hundebereich werden Amazon-Produktplätze zunächst mit dem Platzhalter <code>AMAZON_AFFILIATE_LINK_HIER_EINFUEGEN</code> gepflegt.
-        Erst nach manueller Prüfung sollten echte Amazon.de-Links mit Tracking-ID eingetragen werden.
+        Der Promolink für das Produkt <strong>Der Weg zur finanziellen Freiheit</strong> von Bodo Schäfer ist aktuell noch angefragt. Bis zur Freigabe ist auf der Website
+        der Platzhalter <code>DIGISTORE24_PROMOLINK_HIER_EINFUEGEN</code> hinterlegt.
       </p>
       <p>
         Zusätzlich enthält diese Website Links zu Amazon.de. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Die verwendete Amazon-Tracking-ID lautet
@@ -27,29 +25,13 @@ import { digistoreDogRecommendations, otherDigistoreRecommendations } from "../d
       <h2>Transparenz und redaktionelle Einordnung</h2>
       <p>
         Die Inhalte dieser Website sind als allgemeine Informationen und redaktionelle Einschätzungen zu verstehen. Eine mögliche Provision beeinflusst nicht den Hinweis,
-        dass Produkte, Kurse und Anbieter vor dem Kauf selbst geprüft werden sollten.
+        dass finanzielle Entscheidungen sorgfältig geprüft werden sollten.
       </p>
-      <h2>Keine Tierarztberatung und keine Erfolgsgarantien</h2>
+      <h2>Keine Finanzberatung</h2>
       <p>
-        Hundegesundheitliche Inhalte ersetzen keine Tierarztberatung. Bei gesundheitlichen Problemen, Schmerzen, Lahmheit, Erbrechen, Durchfall, Atemproblemen,
-        starkem Juckreiz oder verändertem Verhalten solltest du eine Tierarztpraxis kontaktieren. Trainings- und Produktempfehlungen enthalten keine Erfolgsgarantie.
+        Diese Website bietet keine individuelle Finanzberatung, Steuerberatung oder Anlageberatung. Es gibt keine Erfolgsgarantie und keine Garantie auf Vermögen,
+        Rendite oder finanzielle Freiheit.
       </p>
     </div>
-  </section>
-
-  <section class="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
-    <DigistoreProductBox
-      items={digistoreDogRecommendations}
-      title="Passende Digistore24-Links im Hundebereich"
-      text="Diese Links wurden anhand der Zielseiten geprüft und passen inhaltlich zu Hund, Welpen, Hundetraining oder Mehrhundehaltung."
-    />
-  </section>
-
-  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
-    <DigistoreProductBox
-      items={otherDigistoreRecommendations}
-      title="Weitere Empfehlungen, nicht hundebezogen"
-      text="Der folgende Link passt nicht zum Hundebereich und wird deshalb nicht prominent auf Hundeseiten eingebunden."
-    />
   </section>
 </BaseLayout>
